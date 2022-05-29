@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package arrays;
 
 public class TargetArrayLC {
     public static void main(String[] args) {

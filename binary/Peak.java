@@ -1,3 +1,5 @@
+package Binary;
+
 public class Peak {
     public static void main(String[] args) {
         int[] nums = { 2, 5, 7, 9,10,12,13,14, 8, 6 };

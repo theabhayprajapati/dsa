@@ -1,3 +1,5 @@
+package Binary;
+
 import java.util.Arrays;
 
 public class SortedTwoD {
@@ -14,12 +16,14 @@ public class SortedTwoD {
         ans = MatixBinarySearch(matrix, target);
         int[] ansMat = new int[2];
         ansMat = BinarySearch(matrix, ans[0], ans[1], target);
+        System.out.println(ansMat);
+        
     }
     static int[] MatixBinarySearch(int[][] matrix, int target) {
         int rStart = 0;
         int rEnd = matrix.length - 1;
         int cStart = 0;
-        int cEnd = matrix.length - 1;
+
         while (rStart < rEnd) {
             while (rStart < rEnd) {
                 int rMid = Math.round((rStart + rEnd) / 2);
@@ -39,8 +43,7 @@ public class SortedTwoD {
     }
 
     static int[] BinarySearch(int[][] matrix, int rStart, int rEnd, int target) {
-        int cStart = 0;
-        int cEnd = matrix.length - 1;
+       
         System.out.println(rStart + " " + rEnd);
         for (int i = rStart; i < rEnd + 1; i++) {
             System.out.println(i);

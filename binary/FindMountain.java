@@ -1,3 +1,6 @@
+
+package Binary;
+
 public class FindMountain {
     public static void main(String[] args) {
         int[] nums = { 2, 5, 7, 9, 7, 8, 6 };

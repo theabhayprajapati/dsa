@@ -1,8 +1,9 @@
+package Binary;
 import java.util.Arrays;
 
 public class FirstnLast {
     public static void main(String[] args) {
-        int[] nums = { 0, 1, 2, 3, 4, 4, 5 };
+        int[] nums = { 0, 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 5 };
         int target = 4;
         System.out.println(Arrays.toString(StartEnding(nums, target)));
     }
@@ -11,7 +12,7 @@ public class FirstnLast {
         int[] ans = { -1, -1 };
         int start = 0;
         int end = nums.length - 1;
-        while (start < end) {
+        while (start <= end) {
             int mid = Math.round((start + end) / 2);
             if (target < nums[mid]) {
                 end = mid - 1;
@@ -29,7 +30,7 @@ public class FirstnLast {
     }
 
     static int binarySearch(int[] nums, int target, boolean startorend) {
-        int ans = 0;
+        int ans = -1;
         int start = 0;
         int end = nums.length - 1;
         while (start <= end) {

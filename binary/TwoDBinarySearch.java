@@ -1,3 +1,4 @@
+package Binary;
 public class TwoDBinarySearch {
     public static void main(String[] args) {
         int[][] matrix = {

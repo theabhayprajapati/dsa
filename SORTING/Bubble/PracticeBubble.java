@@ -26,3 +26,8 @@ public class PracticeBubble {
         }
     }
 }
+// Language: java
+// Path: SORTING\Bubble\PracticeBubble.java
+// Compare this snippet from SORTING\Insertion\Insertion.java:
+// package SORTING.Insertion;
+

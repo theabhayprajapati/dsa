@@ -19,11 +19,15 @@ public class CyclicSort {
     static void cyclicSortFN(int[] nums) {
         int i = 0;
         while (i < nums.length) {
-            if (nums[i] == i) {
-                i++;
+            int correct = nums[i];
+            if (nums[i] != nums[correct]) {
+                int temp = nums[i];
+                nums[i] = nums[correct];
+                nums[correct] = temp;
             } else {
-                swap(nums, nums[i], i);
+                i++;
             }
+
         }
     }
 

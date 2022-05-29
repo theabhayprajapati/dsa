@@ -1,3 +1,5 @@
+
+package Binary;
 import java.util.Arrays;
 
 public class PracticeMatrixBinary {

@@ -1,3 +1,5 @@
+package Binary;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,6 +17,8 @@ public class MultiAL {
                 
             }
         }
+        System.out.println(input);
+        
 
         System.out.println(list);
         System.out.println(list.get(1).get(2));

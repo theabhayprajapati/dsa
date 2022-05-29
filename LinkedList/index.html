@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* use NOTO SANS FONT */
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #0d1117;
+        }
+
+        .container {
+            width: 406px;
+            /* height: 91px; */
+            border-color: #30363d;
+            background-color: #0d1117;
+            color: #8B949E;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0px 0px 10px 0px #30363d;
+        }
+
+        .repo-name {
+            font-size: 14px;
+            /* underline false */
+            text-decoration: none;
+            /* hover underline */
+            cursor: pointer;
+
+            color: #59a6fd;
+        }
+
+        .repo-name:hover {
+            /* underline */
+            text-decoration: underline;
+        }
+
+        .public-tag {
+            color: #8a929c;
+            border-color: #2e333a;
+            display: inline;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            white-space: nowrap;
+            border: 1px solid #2e333a;
+            border-radius: 2em;
+            padding: .1em .35em;
+            font-size: 85%;
+        }
+
+        .repo-desc {
+            font-size: 12px;
+            line-height: 18px;
+            color: #8B949E;
+        }
+
+        .lower-decs {
+            font-size: 12px;
+            /* flex */
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            line-height: 18px;
+            color: #8B949E;
+            text-decoration: none;
+        }
+
+        .repo-language-color {
+            /* /dot */
+            display: inline-block;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+
+        }
+
+        .lower-dec {
+            display: flex;
+            gap: .25rem;
+            align-items: center;
+            /* line-height: 18px; */
+        }
+
+        .flex-1 {
+            display: flex;
+            align-items: center;
+            gap: .25rem;
+        }
+
+        /* svg color white */
+        .lower-dec svg {
+            fill: #8B949E;
+        }
+
+        svg {
+            fill: #8B949E;
+        }
+
+        .lower-dec {
+            text-decoration: none;
+            cursor: pointer;
+            color: #8B949E;
+        }
+
+        .onweravatar-2 {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+
+        const fetchRepoDetails = async (username, reponame) => {
+            const data = await fetch(`
+            https://api.github.com/repos/${username}/${reponame}`);
+            const json = await data.json()
+            console.log(json)
+            const repoDetail = {}
+            repoDetail.name = json.name
+            // owner name
+            repoDetail.owner = json.owner.login
+            repoDetail.ownerAvatar = json.owner.avatar_url
+            repoDetail.description = json.description
+            repoDetail.language = json.language
+            repoDetail.stars = json.stargazers_count
+            repoDetail.forks = json.forks_count
+            return repoDetail
+        }
+
+
+        const renderRepoDetails = (repoDetail) => {
+            const repo = document.querySelector('.container')
+
+            repo.innerHTML += `
+            <div class="pinned-item-list-item-content">
+            <div class="d-flex width-full position-relative">
+                <div class="flex-1">
+                    <img class="onweravatar-2" src="${repoDetail.ownerAvatar}" width="24" height="24" alt="">
+                    <a class="repo-name"
+                        data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:42698533,&quot;target&quot;:&quot;PINNED_REPO&quot;,&quot;user_id&quot;:88815641,&quot;originating_url&quot;:&quot;https://github.com/kunal-kushwaha&quot;}}"
+                        data-hydro-click-hmac="081f2b9900cc526fc94b3e14be138b78939888d9e7b2bc5213f3f20dddf191f7"
+                        href="/kunal-kushwaha/DSA-Bootcamp-Java">
+                        <span class="repo" title="DSA-Bootcamp-Java">
+                       ${repoDetail.owner}/${repoDetail.name}
+                            </span></a>
+                    
+                </div>
+            </div>
+
+
+            <p class="repo-desc">
+                ${repoDetail.description}
+            </p>
+
+            <p class="lower-decs">
+                <span class="lower-dec">
+                    <span class="repo-language-color" style="background-color: rgb(176, 114, 25);"></span>
+                    <span itemprop="programmingLanguage">
+                        ${repoDetail.language}
+                        </span>
+                </span>
+
+                <a href="/kunal-kushwaha/DSA-Bootcamp-Java/stargazers" class="lower-dec">
+                    <svg aria-label="stars" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                        data-view-component="true" class="octicon octicon-star">
+                        <path fill-rule="evenodd"
+                            d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z">
+                        </path>
+                    </svg>
+                    ${repoDetail.stars > 1000 ? (repoDetail.stars / 1000).toFixed(1) + 'k' : repoDetail.stars}
+                </a>
+                <a href="/kunal-kushwaha/DSA-Bootcamp-Java/network/members" class="lower-dec">
+                    <svg aria-label="forks" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                        data-view-component="true" class="octicon octicon-repo-forked">
+                        <path fill-rule="evenodd"
+                            d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                        </path>
+                    </svg>
+                    ${repoDetail.forks > 999 ? (repoDetail.forks / 1000).toFixed(1) + 'k' : repoDetail.forks}
+                </a>
+            </p>
+        </div>
+        `;
+
+
+        }
+
+        const startServer = (url) => {
+            // get domain of url
+            let domain = url.split('/')[2];
+            // get the path of url
+            let path = url.split('/')[3];
+            // get the query string of url
+            // get another path
+            let path2 = url.split('/')[4];
+            // get the query string of url
+            console.log(domain, path, path2);
+            fetchRepoDetails(path, path2).then(data => {
+                console.log(data);
+                renderRepoDetails(data);
+            }
+            ).catch(err => {
+                console.log(err);
+            });
+        }
+        startServer('https://github.com/theabhayprajapati/Open-Apple-Store');
+    </script>
+</body>
+
+</html>
