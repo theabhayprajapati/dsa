@@ -25,7 +25,7 @@ public class BinarySearchRecursive {
         System.out.println(ans);
     }
 
-    private static int binarySearch(int[] arr, int target, int start, int end) {
+    private  static int binarySearch(int[] arr, int target, int start, int end) {
         if (start > end) {
             return -1;
         }
