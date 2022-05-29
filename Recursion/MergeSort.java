@@ -9,7 +9,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         // randome array of integers
-        int[] arr = { 5, 2, 4, 1, 3 };
+        int[] arr = { 5, 4, 3, 2, 1 };
         // print unsorted array
         System.out.println("Unsorted array: ");
         System.out.println(Arrays.toString(arr));
@@ -18,8 +18,7 @@ public class MergeSort {
         // print sorted array
         System.out.println("Sorted array: ");
         System.out.println(Arrays.toString(arr));
-
-    }   
+    }
 
     static void mergeSort(int[] arr, int start, int end) {
         if (start < end) {
@@ -29,6 +28,7 @@ public class MergeSort {
             merge(arr, start, mid, end);
         }
     }
+
     static void merge(int[] arr, int start, int mid, int end) {
         int[] temp = new int[end - start + 1];
         int i = start;
