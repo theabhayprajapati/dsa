@@ -23,7 +23,6 @@ public class QuickSort {
             quickSort(arr, i, pivot - 1);
             quickSort(arr, pivot + 1, pi);
         }
-
     }
 
     private static int partition(int[] arr, int i, int pi) {
@@ -48,4 +47,4 @@ public class QuickSort {
 }
 // this is recursive function;
 // we select an element;
-// 
+//
