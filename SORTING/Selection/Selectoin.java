@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Selectoin {
     public static void main(String[] args) {
-        int[] nums = { 0, 2 };
+        int[] nums = { 5,4,3,2,1};
         SelectionSort(nums);
         System.out.println(Arrays.toString(nums));
     }
@@ -41,4 +41,5 @@ public class Selectoin {
         nums[maxIndex] = nums[last];
         nums[last] = temp;
     }
+    // find the max element and then swap it with last element.
 }

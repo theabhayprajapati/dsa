@@ -28,7 +28,7 @@ public class MergeSort {
             merge(arr, start, mid, end);
         }
     }
-
+    // merge two 
     static void merge(int[] arr, int start, int mid, int end) {
         int[] temp = new int[end - start + 1];
         int i = start;
@@ -42,9 +42,10 @@ public class MergeSort {
             }
             k++;
         }
+        // this is for thie case of the array is not sorted;
         while (i <= mid) {
             temp[k++] = arr[i++];
-        }
+        }   
         while (j <= end) {
             temp[k++] = arr[j++];
         }

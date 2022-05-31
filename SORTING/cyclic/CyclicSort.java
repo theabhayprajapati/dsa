@@ -14,8 +14,6 @@ public class CyclicSort {
         System.out.println(Arrays.toString(nums));
     }
 
-    // n = 4; [4,0,1,3] [1,2,3,4]
-
     static void cyclicSortFN(int[] nums) {
         int i = 0;
         while (i < nums.length) {
@@ -27,7 +25,7 @@ public class CyclicSort {
             } else {
                 i++;
             }
-
+            // this
         }
     }
 
