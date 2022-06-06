@@ -2,10 +2,8 @@ package Binary;
 
 public class Peak {
     public static void main(String[] args) {
-        int[] nums = { 2, 5, 7, 9,10,12,13,14, 8, 6 };
-        findPeak(nums);
-        System.out.println(findPeak(nums));
-
+        int[] nums = { 2, 5, 7, 9, 10, 12, 13, 14, 14, 8, 6, 3, 4 };
+        System.out.println(nums[findPeak(nums)] + " " + findPeak(nums));
     }
 
     static int findPeak(int[] nums) {

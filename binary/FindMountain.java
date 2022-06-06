@@ -21,7 +21,6 @@ public class FindMountain {
         }
         System.out.println("pass");
         binarySearch(nums, target, start);
-
     }
 
     static int binarySearch(int[] nums, int target, int end) {

@@ -3,7 +3,7 @@ package SORTING.MergeSort;
 class MergeSortPC {
 
 	public static void main(String[] args) {
-
+		
 		int nums[] = { 5, 4, 3, 2, 1 };
 		mergeSort(nums, 0, nums.length - 1);
 		// print with loop

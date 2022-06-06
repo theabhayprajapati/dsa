@@ -13,7 +13,7 @@ public class FirstnLast {
         int start = 0;
         int end = nums.length - 1;
         while (start <= end) {
-            int mid = Math.round((start + end) / 2);
+            int mid = start + (end - start) / 2;
             if (target < nums[mid]) {
                 end = mid - 1;
             } else if (target > nums[mid]) {
