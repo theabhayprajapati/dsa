@@ -11,7 +11,7 @@ public class BinarySearch {
                 { 6, 12, 24 },
                 { 8, 16, 30 }
         };
-        int key = 8;
+        int key = 30;
         int ans[] = binarySearch(nums, key);
         System.out.println(Arrays.toString(ans));
 
