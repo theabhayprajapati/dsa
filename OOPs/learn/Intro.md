@@ -57,11 +57,12 @@ under the hood the `this` keyword will be replaced by the object (`h`) itself
 
 [***repo for code🧑🏻‍💻***](https://github.com/theabhayprajapati/dsa/blob/trunk/OOPs/learn/Intro.java)
 
-
 **🤝🏾Connect me on:**
 
 **Twitter**: 🕊️[`@Abhayprajapati_`](https://twitter.com/Abhayprajapati_)
 **Github**: 🐧[`@theabhayprajapati`](https://github.com/theabhayprajapati)
 
 <!-- suggest and edit -->
-[suggest and edit]()
+---
+
+[***suggest and edit🖋️***](https://github.com/theabhayprajapati/dsa/blob/trunk/OOPs/learn/Intro.md)
