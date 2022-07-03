@@ -5,7 +5,15 @@ var tokenize = (string) => {
     }
     var first = string[0];
     var rest = string.substring(1);
-    return [first].concat(tokenize(rest));``
+    return [first].concat(tokenize(rest)); ``
 }
 console.log(tokenize("string"));
-// without using .concat, .substring
+
+var lTokenize = (string) => {
+    var ans = [];
+    for (var i = 0; i < string.length; i++) {
+        ans.push(string[i]);
+    }
+    return ans;
+}
+console.log(lTokenize("string"));
