@@ -15,4 +15,3 @@ echo -e "\033[32mCommitted and pushed branch: $branch_name\033[0m"
 echo -e "\e[34m"
 echo "message : $1"
 echo -e "\e[0m"
-

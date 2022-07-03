@@ -11,20 +11,25 @@ var mergeSort = (nums) => {
 }
 var merge = (left, right) => {
     var result = [];
-    while (left.length && right.length) {
-        if (left[0] < right[0]) {
-            result.push(left.shift());
+    var i = 0;
+    var j = 0;
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            result.push(left[i]);
+            i++;
         } else {
-            result.push(right.shift());
+            result.push(right[j]);
+            j++;
         }
     }
-    while (left.length) {
-        result.push(left.shift());
+    while (i < left.length) {
+        result.push(left[i]);
+        i++;
     }
-    while (right.length) {
-        result.push(right.shift());
+    while (j < right.length) {
+        result.push(right[j]);
+        j++;
     }
-    console.log(result);
     return result;
 }
 console.log(mergeSort(nums));
@@ -33,3 +38,5 @@ var obj = {
     age: [1, 2, 3, 4, 5]
 }
 console.log(obj);
+
+
