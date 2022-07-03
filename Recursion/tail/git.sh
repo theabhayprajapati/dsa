@@ -1,5 +1,4 @@
 # take input for msg
-echo "Enter the message"
 read msg
 # run this cmd
 git add .
