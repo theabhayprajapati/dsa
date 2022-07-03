@@ -5,5 +5,7 @@ read msg
 git add .
 git commit -m "$msg"
 git push 
-# msg success
-echo "Successfully pushed to github"
+# msg green color msg
+echo -e "\e[32m"
+echo "Commit and push done"
+echo -e "\e[0m"
