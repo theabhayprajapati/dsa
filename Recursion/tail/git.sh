@@ -6,6 +6,10 @@ fi
 git add .
 git commit -m "$1"
 # check for errors
+# get the branch name
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+# print
+echo -e "\033[32mCommitted to branch: $branch_name\033[0m"
 git push
 # msg green color msg
 echo -e "\e[32m"
