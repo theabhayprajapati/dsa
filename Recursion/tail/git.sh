@@ -1,8 +1,7 @@
-# take input for msg
-read msg
-# run this cmd
+
+
 git add .
-git commit -m "$msg"
+git commit -m "$1"
 git push 
 # msg green color msg
 echo -e "\e[32m"
