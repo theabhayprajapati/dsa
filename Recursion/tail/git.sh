@@ -7,14 +7,11 @@ git add .
 git commit -m "$1"
 # check for errors
 # get the branch name
-branch_name=$(git rev-parse --abbrev-ref HEAD)
 # print
 echo -e "\033[32mCommitted to branch: $branch_name\033[0m"
 git push
 # msg green color msg
-echo -e "\e[32m"
-echo "Commit and push done :"
-echo -e "\e[0m"
+branch_name=$(git rev-parse --abbrev-ref HEAD)
 echo -e "\e[34m"
 echo "commit : $1"
 echo -e "\e[0m"
