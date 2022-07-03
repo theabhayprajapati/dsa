@@ -15,10 +15,6 @@ echo "Commit and push done :"
 echo -e "\e[0m"
 # in blue
 echo -e "\e[34m"
-echo ""
-# same line different color
-echo "git status"
-echo ""
-
+echo "commit : $1"
 echo -e "\e[0m"
 
