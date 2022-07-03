@@ -11,7 +11,6 @@ git push
 echo -e "\e[32m"
 echo "Commit and push done :"
 echo -e "\e[0m"
-# in blue
 echo -e "\e[34m"
 echo "commit : $1"
 echo -e "\e[0m"
