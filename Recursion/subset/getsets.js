@@ -1,16 +1,10 @@
-var subseq = (p, up) => {
-    if (up.length == 0) {
-        var ans = []
-        ans.push(p);
-        return ans;
+// get sub set of all 
+// cars by simple recursion
+var getSubSets = function (arr, index, current, result) {
+    result.push(current);
+    for (var i = index; i < arr.length; i++) {
+        getSubSets(arr, i + 1, current.concat(arr[i]), result);
     }
-    var ch = up[0];
-    var left = subseq(p, up.substring(1))
-    var right = subseq(p + ch, up.substring(1));
-    for (var i = 0; i < right.length ; i++) {
-        left.push(right[i])
-    }
-    return left;
+    return result;
 }
-
-console.log(subseq("", "car"))
+console.log(getSubSets('cars', 0, [], []));

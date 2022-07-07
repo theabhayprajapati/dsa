@@ -7,7 +7,7 @@ var quickSort = (nums, low, hi) => {
         return;
     }
     var start = low;
-    var end = hi;
+    var end = hi;   
     var mid = start + Math.floor((end - start) / 2);
     var pvt = nums[mid];
     while (start <= end) {
@@ -25,7 +25,6 @@ var quickSort = (nums, low, hi) => {
             end--;
         }
     }
-
     quickSort(nums, low, end);
     quickSort(nums, start, hi);
 }

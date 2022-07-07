@@ -8,7 +8,8 @@ var go = (n, a, b) => {
     if (n == 1) {
         return b;
     }
+    
     return go(n - 1, b, b + a);
 }
 
-console.log(fib(6));
+console.log(fib(50));
